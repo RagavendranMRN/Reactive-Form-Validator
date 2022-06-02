@@ -1,0 +1,22 @@
+<h1>Angular 4: Reactive forms(pt. 2)</h1>
+<form [formGroup]="myForm" (ngSubmit)="register(myForm)" novalidate>
+  <p>Is "myForm" valid? {{ myForm.valid }}</p>
+
+  <div>
+    <label>Name</label>
+    <input type="text" name="name" formControlName="name" />
+    <show-errors [control]="myForm.controls.name"></show-errors>
+  </div>
+
+  <div>
+    <label>Birth Year</label>
+    <input type="text" name="birthYear" formControlName="birthYear" />
+    <show-errors [control]="myForm.controls.birthYear"></show-errors>
+  </div>
+
+  <pre>{{ myForm.value | json }}</pre>
+  <button type="submit" [disabled]="myForm.invalid || myForm.pending">
+    Register here
+  </button>
+  <button type="button" (click)="printMyForm()">Print to console</button>
+</form>
