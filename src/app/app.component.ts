@@ -21,6 +21,7 @@ export class AppComponent {
     this.myForm = this.fb.group({
       name: ['', Validators.required, CustomValidators.uniqueName],
       birthYear: ['', [Validators.required, CustomValidators.birthYear]],
+      minLength: ['', [Validators.required, CustomValidators.minLength]],
     });
   }
 

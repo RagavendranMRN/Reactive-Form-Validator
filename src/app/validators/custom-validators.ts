@@ -20,6 +20,18 @@ export class CustomValidators {
     return isValid ? null : message;
   }
 
+  static minLength(c: FormControl): ValidationErrors {
+    const numValue = Number(c.value);
+    console.log(numValue);
+    const isValid = !isNaN(numValue) && numValue != 0;
+    const message = {
+      years: {
+        message: 'Minimum length should be greater than zero',
+      },
+    };
+
+    return isValid ? null : message;
+  }
   static uniqueName(c: FormControl): Promise<ValidationErrors> {
     const message = {
       uniqueName: {

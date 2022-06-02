@@ -14,6 +14,18 @@
     <show-errors [control]="myForm.controls.birthYear"></show-errors>
   </div>
 
+  <div>
+    <label>Min Length</label>
+    <input type="text" name="birthYear" formControlName="minLength" />
+    <show-errors [control]="myForm.controls.minLength"></show-errors>
+  </div>
+
+  <div>
+    <label>Max Length</label>
+    <input type="text" name="birthYear" formControlName="birthYear" />
+    <show-errors [control]="myForm.controls.birthYear"></show-errors>
+  </div>
+
   <pre>{{ myForm.value | json }}</pre>
   <button type="submit" [disabled]="myForm.invalid || myForm.pending">
     Register here
